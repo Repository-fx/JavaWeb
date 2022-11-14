@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onclick</title>
+    <script type="text/javascript">
+        function onclickFun() {
+            alert("静态注册的onclick事件1");
+        }
+
+        //动态注册的onclick事件
+        window.onload=function () {
+            var btnObj=document.getElementById("btn01");
+            // alert(btnObj);
+            btnObj.onclick=function () {
+                alert("动态注册的onclick事件");
+            }
+        }
+    </script>
+</head>
+<body>
+<!--静态注册onlick事件
+
+-->
+<button onclick="onclickFun();">按钮1</button>
+<button onclick="alert('静态注册的onclick事件2')">按钮2</button>
+<button id="btn01">按钮3</button>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementByName</title>
+    <script type="text/javascript">
+        function checkAll(){
+            //让所有复选框都选中
+            //document.getElementsByName()是根据指定的name属性查询返回多个标签对象集合，集合中每个元素都是dom对象
+            var hobbies = document.getElementsByName("hobby");
+            // alert(hobbies);
+            // alert(hobbies.length);
+            // alert(hobbies[0].value);
+            for(var i=0;i<hobbies.length;i++){
+                hobbies[i].checked=true;
+            }
+
+        }
+        function checkNo(){
+            var hobbies = document.getElementsByName("hobby");
+            for(var i=0;i<hobbies.length;i++){
+                hobbies[i].checked=false;
+            }
+        }
+        function checkReverse(){
+            var hobbies = document.getElementsByName("hobby");
+            for(var i=0;i<hobbies.length;i++){
+                if(hobbies[i].checked==true){
+                    hobbies[i].checked=false;
+                }else{
+                    hobbies[i].checked=true
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    兴趣爱好：
+    <input type="checkbox" name="hobby" value="cpp">C++
+    <input type="checkbox" name="hobby" value="java">Java
+    <input type="checkbox" name="hobby" value="js">JavaScript
+    <br/>
+    <button onclick="checkAll()">全选</button>
+    <button onclick="checkNo()">全不选</button>
+    <button onclick="checkReverse()">反选</button>
+</body>
+</html>

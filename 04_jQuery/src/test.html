@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //.html不传参数是获取，传参数是设置
+            // alert($("div").html());
+            $("#btn1").click(function () {
+                $("div").html("<h1>用html测试</h1>");
+            });
+            //.text不传参数是获取，传参数是设置
+            // alert($("div").text());
+            $("#btn2").click(function () {
+                $("div").text("<h1>用text测试</h1>");
+            });
+            //.val用于操作表单项的value值,不传参数是获取，传参数是设置
+            $("#btn3").click(function () {
+                alert($("#username").val());
+                $("#username").val("设置的val值");
+            })
+
+
+        });
+    </script>
+</head>
+<body>
+    <div>我是div标签<span>我是div中的span</span></div>
+    <input type="text" name="username" id="username"/>
+    <button id="btn1">测试html</button>
+    <button id="btn2">测试text</button>
+    <button id="btn3">操作输入框</button>
+</body>
+</html>
